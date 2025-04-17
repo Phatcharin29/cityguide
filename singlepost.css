@@ -1,0 +1,156 @@
+
+.row-body {
+  width: 1260px;
+  height: 1640px;
+  gap: 10px;
+ }
+ .text-button-activites{
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #B50017;
+  border:none;
+ }
+ 
+.text-onedaytrip{
+  font-family: Shippori Mincho;
+font-weight: 700;
+font-size: 32px;
+line-height: 100%;
+letter-spacing: 0%;
+text-transform: uppercase;
+color:#262727;
+}
+.text-chaophaya{
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #B60017;
+ }
+ .imge-chaophaya{
+  width: 910px;
+  height: 423px;
+ 
+  width: 616px;
+  height: 300px;
+  border: 1px solid #D9D9D9
+ }
+ .colume-orderfood{
+  width: 616px;
+  height: 300px;
+  border: 1px solid #D9D9D9
+ }
+
+ .img-food{
+  width: 300px;
+  height: 300px;
+  gap: 10px;
+  
+ }
+ .colume-orderfood-detail{
+  width: 316;
+height: 300;
+gap: 10px;
+justify-content: space-between;
+padding: 16px;
+display: flex;
+display: inline;
+
+ }
+
+.main-content {
+  margin-right: 345px;
+  padding: 20px;
+}
+
+.container-conten-sidebar {
+  width: 340px;
+  height: 1498.57px;
+  gap: 24px;          
+ 
+}
+
+.row-sidebar{
+  width: 345px;
+  height: 405px;
+  gap: 10px;
+  margin-bottom: 24px;
+  border: 1px solid #F3F3F3;
+  top:110px;                
+  right: 90px;             
+  width: 345px;
+  position: flex;
+ }
+
+.text-sidebar {
+  font-family: "Shippori Mincho", serif;
+  margin: 12px 20px;
+  font-weight: 700; 
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #262727;
+}
+
+.colume-img-sidebar {
+  width: 321px;
+  height: 158px;
+  margin: 10px 12px;
+  align-items: center;
+  border: 1px solid #F3F3F3;
+  display: flex;
+ }
+
+.img-iconsiam {
+  width: 160.5px;
+  height: 158px;
+}
+
+.text-imge {
+  width: 160.5px;
+  height: 158px;
+  gap: 4px;
+  padding: 8px;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #262727;
+}
+
+.row-book {
+  width: 340px;
+  height: 496.57px;
+  gap: 10px;
+  border: 1px solid #F3F3F3;
+  margin-top:44px;           
+  right: 90px;             
+  display: fixed;
+  justify-self: flex-end;
+}
+.text-book {
+  font-size: 18px;
+  font-weight: 600;
+  color: #262727;
+  margin-bottom: 10px;
+}
+
+.colume-imge-book {
+  width: 100%;
+  height: auto;
+  border: 1px solid #F3F3F3;
+}
+
+.imge-travel {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
