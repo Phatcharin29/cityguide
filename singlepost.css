@@ -1,95 +1,161 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: #262727;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+  font-family: 'Shippori Mincho', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  padding: 36px 0;
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1248px;
+  margin: auto;
+}
+.container-body {
+  display: flex;
+  gap: 16px;
+}
 
 .row-body {
-  width: 1260px;
-  height: 1640px;
+  flex: 1 1 0;
   gap: 10px;
- }
- .text-button-activites{
+}
+
+.text-button-activites {
   font-family: Inter;
   font-weight: 700;
   font-size: 14px;
   line-height: 100%;
   letter-spacing: 0%;
   color: #B50017;
-  border:none;
- }
- 
-.text-onedaytrip{
-  font-family: Shippori Mincho;
-font-weight: 700;
-font-size: 32px;
-line-height: 100%;
-letter-spacing: 0%;
-text-transform: uppercase;
-color:#262727;
+  border: none;
 }
-.text-chaophaya{
+
+.text-onedaytrip {
+  font-family: Shippori Mincho;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #262727;
+}
+
+.text-chaophaya {
   font-family: Inter;
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
   letter-spacing: 0%;
   color: #B60017;
- }
- .imge-chaophaya{
-  width: 910px;
-  height: 423px;
- 
-  width: 616px;
-  height: 300px;
-  border: 1px solid #D9D9D9
- }
- .colume-orderfood{
-  width: 616px;
-  height: 300px;
-  border: 1px solid #D9D9D9
- }
+}
 
- .img-food{
+.imge-chaophaya {
+  width: 100%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  border: 1px solid #D9D9D9
+}
+
+.colume-orderfood {
+  max-width: 616px;
+  display: flex;
+margin: auto;
+  border: 1px solid #D9D9D9
+}
+
+.img-food {
   width: 300px;
   height: 300px;
   gap: 10px;
-  
- }
- .colume-orderfood-detail{
-  width: 316;
-height: 300;
-gap: 10px;
-justify-content: space-between;
-padding: 16px;
-display: flex;
-display: inline;
+  object-fit: cover;
+}
 
- }
+.colume-orderfood-detail {
+  gap: 10px;
+  justify-content: space-between;
+  padding: 16px;
+  display: flex;
+  display: inline;
+
+}
 
 .main-content {
-  margin-right: 345px;
+  flex: 0 0 auto;
   padding: 20px;
+  width: 340px;
 }
 
 .container-conten-sidebar {
   width: 340px;
   height: 1498.57px;
-  gap: 24px;          
- 
+  gap: 24px;
+
 }
 
-.row-sidebar{
+.row-sidebar {
   width: 345px;
   height: 405px;
   gap: 10px;
   margin-bottom: 24px;
   border: 1px solid #F3F3F3;
-  top:110px;                
-  right: 90px;             
+  top: 110px;
+  right: 90px;
   width: 345px;
   position: flex;
- }
+}
 
 .text-sidebar {
   font-family: "Shippori Mincho", serif;
   margin: 12px 20px;
-  font-weight: 700; 
+  font-weight: 700;
   font-size: 20px;
   line-height: 100%;
   letter-spacing: 0;
@@ -103,7 +169,7 @@ display: inline;
   align-items: center;
   border: 1px solid #F3F3F3;
   display: flex;
- }
+}
 
 .img-iconsiam {
   width: 160.5px;
@@ -129,11 +195,12 @@ display: inline;
   height: 496.57px;
   gap: 10px;
   border: 1px solid #F3F3F3;
-  margin-top:44px;           
-  right: 90px;             
+  margin-top: 44px;
+  right: 90px;
   display: fixed;
   justify-self: flex-end;
 }
+
 .text-book {
   font-size: 18px;
   font-weight: 600;
@@ -145,12 +212,35 @@ display: inline;
   width: 100%;
   height: auto;
   border: 1px solid #F3F3F3;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 16px;
+}
+.colume-imge-book form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
+.colume-imge-book input {
+  border: 1px solid #F3F3F3;
+  font-size: 14px;
+  padding: 10px 16px;
+  font-family: "Inter", sans-serif;
+}
+
+.colume-imge-book button {
+  background: #B50017;
+  font-size: 14px;
+  padding: 10px 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  color: #FFFFFF;
+}
 .imge-travel {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
-
-
