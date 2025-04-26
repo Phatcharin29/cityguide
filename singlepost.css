@@ -19,6 +19,11 @@ section {
   padding: 36px 0;
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
 .line-clamp-1 {
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -58,48 +63,33 @@ section {
   max-width: 1248px;
   margin: auto;
 }
-.container-body {
+
+.cg-breadcrumb {
   display: flex;
-  gap: 16px;
-}
+  gap: 4px;
+  align-items: center;
+  margin-bottom: 10px;
 
-.row-body {
-  flex: 1 1 0;
-  gap: 10px;
-}
-.arrow-lef{
-  width: 8.13px;
-  height: 14.38px;
-  top: 2.81px;
-  left: 5.31px;
-  color: #B50017;
-
+  .cg-breadcrumb-item {
+    font-weight: 700;
+    font-size: 14px;
+    color: #B50017;
+    border: none;
+    background: none;
+    display: block;
+    text-decoration: none;
   }
+}
 
-.text-button-activites {
-  font-family: Inter;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  color: #B50017;
-  border: none;
-  background: none;
-  
- }
-
-.text-onedaytrip {
-  font-family: Shippori Mincho;
+.cg-single-title {
+  font-family: 'Shippori Mincho';
   font-weight: 700;
   font-size: 32px;
-  line-height: 100%;
-  letter-spacing: 0%;
   text-transform: uppercase;
-  margin: 10px;
   color: #262727;
 }
 
-.text-chaophaya {
+.cg-single-subtitle {
   font-family: Inter;
   font-weight: 400;
   font-size: 14px;
@@ -108,321 +98,243 @@ section {
   color: #B60017;
 }
 
-.imge-chaophaya {
-  width: 100%;
-  aspect-ratio: 2/1;
-  margin: 10px 90px 24px 10px;
-  object-fit: cover;
-  border: 1px solid #D9D9D9
-}
-
-.colume-orderfood {
-  max-width: 616px;
+.cg-single-content {
   display: flex;
-  margin: 24px 147px;
-  border: 1px solid #D9D9D9
-} 
+  gap: 16px;
 
-.img-food {
-  width: 300px;
-  height: 300px;
-  gap: 10px;
-  object-fit: cover;
-}
-
-.colume-orderfood-detail {
-  gap: 10px;
-  justify-content: space-between;
-  padding: 16px;
-  display: flex;
-  display: inline;
-  
-}
-.option-button{
-  font-family: Inter;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  color: #B60017;
-  background: none;
-  border: none;
-  width: 316;
-  height: 300;
- justify-content: space-between;
-  padding: 16px;
-
-}
-.text-topfive{
-  width: 284px;
-  height: 108;
-  gap: 10px;
-  margin: 62.5px 16px;
-}
-.h2-text-topfive {
-  width: 284px;
-  height: 60px;
-  gap: 10px;
-  font-family: Shippori Mincho;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 150%;
-  letter-spacing: 0%;
-  text-transform: uppercase;
-  color: #262727;  
-}
-.line-clamp-2{
-  width: 304px;
-  height: 48px;
-  font-family: Shippori Mincho;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0%;
-  text-transform: uppercase;
-  color: #262727;
-}
-
-.emoji{
-  width: 284px;
-  height: 20px;
-  gap: 10px;
-  align-items: center;
-  display:flex;
-  justify-content: space-between;
+  .cg-single-content-inner {
+    gap: 10px;
   }
 
-.tryicons_fa-heart{
-  top: 2.5px;
-  left: 1px;
-  color: #B60017;
-}
-.like{
-  font-family: Inter;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-  color: #B60017;
-}
-.tryicons_fa-bookmar {
-  width: 9px;  
-  height: 12.5px;
-  top: 2px;
-  left: 3.5px;
-  color: #B60017;
-}
-.amount{
-  font-family: Inter;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-  color: #B60017;
-}
-.message-time{
-  font-family: Inter;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: right;
-  color: #B60017;
+  .cg-single-feature-image img {
+    width: 100%;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    margin-bottom: 24px;
+
+  }
 }
 
-.main-content {
+.cg-card-featured {
+  display: flex;
+  margin: 24px auto;
+  border: 1px solid #D9D9D9;
+  max-width: 616px;
+
+  .cg-card-image {
+    width: 300px;
+    height: 300px;
+    gap: 10px;
+    object-fit: cover;
+  }
+
+  .cg-card-text {
+    gap: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .cg-card-tags {
+      display: flex;
+      gap: 10px;
+
+      .tag {
+        font-size: 12px;
+        padding: 0;
+        color: #B60017;
+        background: none;
+        border: none;
+        justify-content: space-between;
+        text-decoration: none;
+      }
+    }
+
+
+    .cg-card-content {
+      gap: 10px;
+      margin-top: auto;
+      margin-bottom: auto;
+
+      p {
+        margin-bottom: 0;
+        font-family: Shippori Mincho;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #262727;
+      }
+
+      .headline {
+        width: 284px;
+        height: 60px;
+        gap: 10px;
+        font-family: Shippori Mincho;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #262727;
+      }
+    }
+
+    .cg-card-meta {
+      gap: 10px;
+      align-items: baseline;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+
+      .meta-like,
+      .meta-bookmark {
+        color: #B60017;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4px;
+      }
+
+      .meta-reading {
+        font-size: 12px;
+        text-align: right;
+        color: #B60017;
+        margin-left: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.cg-single-content-sidebar {
   flex: 0 0 auto;
-  padding: 20px;
-  width: 340px;
-}
-
-.container-conten-sidebar {
-  width: 340px;
-  height: 1498.57px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
   gap: 24px;
 
+  .sidebar {
+    gap: 10px;
+    padding: 20px 12px;
+    border: 1px solid #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .sidebar-title {
+    font-family: "Shippori Mincho", serif;
+    font-weight: 700;
+    font-size: 20px;
+    width: 100%;
+    color: #262727;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E9E9E9;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    margin-bottom: 0;
+
+    a {
+      font-size: 14px;
+      font-weight: 700;
+      color: #B60017;
+      text-decoration: none;
+    }
+  }
+
+  .sidebar-body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #53565A;
+    font-size: 14px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin-bottom: 0;
+      padding-left: 1.5em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    input {
+      border: 1px solid #F3F3F3;
+      font-size: 14px;
+      padding: 10px 16px;
+      font-family: "Inter", sans-serif;
+    }
+
+    button {
+      background: #B50017;
+      font-size: 14px;
+      padding: 10px 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: none;
+      color: #FFFFFF;
+    }
+
+    .sidebar-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .text-itinerary {
+      font-family: 'Shippori Mincho';
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #262727;
+      margin-bottom: 8px;
+    }
+
+    a {
+      font-weight: 700;
+      color: #B60017;
+      text-decoration: none;
+    }
+
+    .btn-more {
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+  }
 }
 
-.row-sidebar {
-  width: 345px;
-  height: 405px;
-  gap: 10px;
-  margin-bottom: 24px;
-  border: 1px solid #F3F3F3;
-  top: 110px;
-  right: 90px;
-  width: 345px;
-  position: flex;
-}
 
-.text-sidebar {
-  font-family: "Shippori Mincho", serif;
-  margin: 12px 20px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 100%;
-  letter-spacing: 0;
-  color: #262727;
-}
-
-.colume-img-sidebar {
-  width: 321px;
-  height: 158px;
-  margin: 10px 12px;
+.cg-card-location {
   align-items: center;
   border: 1px solid #F3F3F3;
   display: flex;
-}
 
-.img-iconsiam {
-  width: 160.5px;
-  height: 158px;
-}
+  .cg-card-image {
+    width: 160.5px;
+    height: 158px;
+  }
 
-.text-imge {
-  width: 160.5px;
-  height: 158px;
-  gap: 4px;
-  padding: 8px;
-  font-family: "Shippori Mincho", serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  color: #262727;
-}
-
-.row-book {
-  width: 340px;
-  height: 496.57px;
-  gap: 10px;
-  border: 1px solid #F3F3F3;
-  margin-top: 44px;
-  right: 90px;
-  display: fixed;
-  justify-self: flex-end;
-}
-
-.text-book {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 20px 12px 10px 12px;
-  color: #262727;
-  margin-bottom: 10px;
-}
-
-.colume-imge-book {
-  width: 100%;
-  height: auto;
-  border: 1px solid #F3F3F3;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 20px 16px;
-}
-.colume-imge-book form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.colume-imge-book input {
-  border: 1px solid #F3F3F3;
-  font-size: 14px;
-  padding: 10px 16px;
-  font-family: "Inter", sans-serif;
-}
-
-.colume-imge-book button {
-  background: #B50017;
-  font-size: 14px;
-  padding: 10px 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  color: #FFFFFF;
-}
-.imge-travel {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-.row-itinerary{
-  width: 340;
-  height: 549;
-  gap: 10px;
-  padding: 20px 12px ;
-  border: 1px solid #F3F3F3;
-  margin-top: 44px;
-  right: 90px;
-  display: fixed;
-  justify-self: flex-end;
-}
-.text-button-itinerary{
-  width: 316;
-  height: 37;
-  gap: 10px;
-  margin: 20px 12px 10px 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #E9E9E9;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-.text-itinerary{
-  font-family:Shippori Mincho;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-transform: uppercase;
-  color: #262727;
-}
-.btn-seeall{
-  width: 56;
-  height: 17;
-  font-family: Inter;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-transform: uppercase;
-  color: #B60017;
-  background: none;
-  border: none;
-}
-.seeall{
-  width: 8.13px;
-  height: 14.38px;
-  top: 17.19px;
-  left: 14.69px;
-  color: #B50017;
-}
-.itinerary-detaile{
-  width: 316;
-  height: 462;
-  margin-top: 10px;
-  margin: 10px 12px 20px 12px;
-}
-.text-itinerary{
-  font-family: Inter;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 150%;
-  letter-spacing: 0%;
-}
-.text-detaile-itinerary{
-  font-family: Inter;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 150%;
-  letter-spacing: 0%;
-  color: #53565A;
+  .cg-card-title {
+    gap: 4px;
+    padding: 8px;
+    font-family: "Shippori Mincho", serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262727;
+  }
 }
