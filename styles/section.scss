@@ -28,56 +28,6 @@
   .cg-section-topic-grid {
     width: 100%;
     gap: 16px;
-
-    .cg-section-topic-swiper-feature {
-      flex: 1 0 100%;
-
-      .swiper-wrapper {
-        height: auto;
-      }
-
-      @include min-w(lg) {
-        .swiper-wrapper {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 16px;
-          transform: none !important;
-
-          .swiper-slide {
-            width: auto !important;
-
-            &:first-child {
-              grid-row: span 2;
-            }
-          }
-        }
-      }
-    }
-
-    .cg-section-topic-swiper-content {
-      margin-top: 16px;
-
-      .swiper-wrapper {
-        height: auto;
-      }
-      
-      @include min-w(lg) {
-        .swiper-wrapper {
-          display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 0 16px;
-          transform: none !important;
-
-          .swiper-slide {
-            width: auto !important;
-
-            &:first-child {
-              grid-row: span 2;
-            }
-          }
-        }
-      }
-    }
   }
 
   &.alt-1 {
@@ -97,6 +47,78 @@
     }
   }
 }
+
+
+.cg-section-topic-swiper-feature {
+  flex: 1 0 100%;
+
+  .swiper-wrapper {
+    height: auto;
+  }
+
+  @include min-w(lg) {
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      transform: none !important;
+
+      .swiper-slide {
+        width: auto !important;
+
+        &:first-child {
+          grid-row: span 2;
+        }
+      }
+    }
+  }
+}
+
+.cg-section-topic-swiper-content {
+  margin-top: 16px;
+
+  .swiper-wrapper {
+    height: auto;
+  }
+  
+  @include min-w(lg) {
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0 16px;
+      transform: none !important;
+
+      .swiper-slide {
+        width: auto !important;
+
+        &:first-child {
+          grid-row: span 2;
+        }
+      }
+    }
+  }
+}
+
+.cg-section-subtitle {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #B50017;
+  text-transform: uppercase;
+}
+
+.cg-section-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 32px;
+  color: #262727;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @include max-w(lg) {
+    font-size: 28px;
+  }
+}
+
 
 .bg-1 {background: #F9F9F9;}
 .bg-2 {background: #F3F3F3;}

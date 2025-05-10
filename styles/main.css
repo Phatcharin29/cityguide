@@ -1101,7 +1101,6 @@ button[type=submit], .btn-submit {
   font-weight: 600;
   color: var(--white);
   font-size: 13px;
-  text-transform: uppercase;
 }
 .cg-header .cg-header-subnav .cg-header-lvl3 .container .cg-header-lvl3-swiper .swiper-wrapper .menu-item a {
   font-family: "Bricolage Grotesque", sans-serif;
@@ -1286,46 +1285,6 @@ body.toggle-region-active .cg-header-region {
   width: 100%;
   gap: 16px;
 }
-.cg-section-topic .cg-section-topic-grid .cg-section-topic-swiper-feature {
-  flex: 1 0 100%;
-}
-.cg-section-topic .cg-section-topic-grid .cg-section-topic-swiper-feature .swiper-wrapper {
-  height: auto;
-}
-@media (min-width: 1024px) {
-  .cg-section-topic .cg-section-topic-grid .cg-section-topic-swiper-feature .swiper-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    transform: none !important;
-  }
-  .cg-section-topic .cg-section-topic-grid .cg-section-topic-swiper-feature .swiper-wrapper .swiper-slide {
-    width: auto !important;
-  }
-  .cg-section-topic .cg-section-topic-grid .cg-section-topic-swiper-feature .swiper-wrapper .swiper-slide:first-child {
-    grid-row: span 2;
-  }
-}
-.cg-section-topic .cg-section-topic-grid .cg-section-topic-swiper-content {
-  margin-top: 16px;
-}
-.cg-section-topic .cg-section-topic-grid .cg-section-topic-swiper-content .swiper-wrapper {
-  height: auto;
-}
-@media (min-width: 1024px) {
-  .cg-section-topic .cg-section-topic-grid .cg-section-topic-swiper-content .swiper-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0 16px;
-    transform: none !important;
-  }
-  .cg-section-topic .cg-section-topic-grid .cg-section-topic-swiper-content .swiper-wrapper .swiper-slide {
-    width: auto !important;
-  }
-  .cg-section-topic .cg-section-topic-grid .cg-section-topic-swiper-content .swiper-wrapper .swiper-slide:first-child {
-    grid-row: span 2;
-  }
-}
 .cg-section-topic.alt-1 .cg-section-topic-head {
   background: #1E1E1E;
 }
@@ -1337,6 +1296,69 @@ body.toggle-region-active .cg-header-region {
 }
 .cg-section-topic.alt-2 .cg-section-topic-body {
   background: #262727;
+}
+
+.cg-section-topic-swiper-feature {
+  flex: 1 0 100%;
+}
+.cg-section-topic-swiper-feature .swiper-wrapper {
+  height: auto;
+}
+@media (min-width: 1024px) {
+  .cg-section-topic-swiper-feature .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    transform: none !important;
+  }
+  .cg-section-topic-swiper-feature .swiper-wrapper .swiper-slide {
+    width: auto !important;
+  }
+  .cg-section-topic-swiper-feature .swiper-wrapper .swiper-slide:first-child {
+    grid-row: span 2;
+  }
+}
+
+.cg-section-topic-swiper-content {
+  margin-top: 16px;
+}
+.cg-section-topic-swiper-content .swiper-wrapper {
+  height: auto;
+}
+@media (min-width: 1024px) {
+  .cg-section-topic-swiper-content .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0 16px;
+    transform: none !important;
+  }
+  .cg-section-topic-swiper-content .swiper-wrapper .swiper-slide {
+    width: auto !important;
+  }
+  .cg-section-topic-swiper-content .swiper-wrapper .swiper-slide:first-child {
+    grid-row: span 2;
+  }
+}
+
+.cg-section-subtitle {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #B50017;
+  text-transform: uppercase;
+}
+
+.cg-section-title {
+  font-family: "Shippori Mincho", serif;
+  font-size: 32px;
+  color: #262727;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media (max-width: 1023.02px) {
+  .cg-section-title {
+    font-size: 28px;
+  }
 }
 
 .bg-1 {
@@ -1376,6 +1398,35 @@ body.toggle-region-active .cg-header-region {
   .cg-single-subtitle {
     text-align: center;
   }
+}
+
+.cg-single-meta {
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #53565A;
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+@media (max-width: 1023.02px) {
+  .cg-single-meta {
+    text-align: center;
+    justify-content: center;
+  }
+}
+.cg-single-meta .rating {
+  display: flex;
+  gap: 4px;
+}
+.cg-single-meta .rating svg {
+  width: 16px;
+  height: 16px;
+  color: #B60017;
 }
 
 .cg-single-content {

@@ -25,6 +25,36 @@
   }
 }
 
+.cg-single-meta {
+  font-family: 'Inter', serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #53565A;
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+  @include max-w(lg) {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .rating {
+    display: flex;
+    gap: 4px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: #B60017;
+    }
+  }
+}
+
 .cg-single-content {
   display: flex;
   gap: 16px;

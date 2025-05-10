@@ -623,8 +623,8 @@ video {
   margin-top: 34px;
 }
 
-.\!ms-0 {
-  margin-inline-start: 0px !important;
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .line-clamp-2 {
@@ -653,16 +653,16 @@ video {
   width: auto !important;
 }
 
-.min-w-\[215px\] {
-  min-width: 215px;
-}
-
 .min-w-\[192px\] {
   min-width: 192px;
 }
 
 .max-w-\[490px\] {
   max-width: 490px;
+}
+
+.max-w-\[900px\] {
+  max-width: 900px;
 }
 
 .transform {
@@ -728,10 +728,6 @@ video {
 }
 
 @media not all and (min-width: 1024px) {
-  .max-lg\:max-w-none {
-    max-width: none;
-  }
-
   .max-lg\:\!max-w-none {
     max-width: none !important;
   }

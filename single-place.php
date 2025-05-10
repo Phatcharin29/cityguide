@@ -1,7 +1,7 @@
 <?php get_component('/header.php') ?>
 
 <section class="py-9">
-  <div class="container">
+  <div class="container max-w-[900px]">
     <div class="mb-3">
       <div class="cg-breadcrumb">
         <svg width="20"
@@ -15,14 +15,21 @@
 
         <a href="#"
             class="cg-breadcrumb-item">
-          Activites
+          Places
         </a>
       </div>
       <h1 class="cg-single-title">
-        1 Day trip of 9 temples
+        Icon siam
       </h1>
-      <p class="cg-single-subtitle">
-        Chaophaya, Bangkok
+      <p class="cg-single-meta">
+        <span>Chaophraya</span>
+        <span class="rating">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.4,16.4,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65A8,8,0,0,0,128,181.1V32c.24,0,.27.08.35.26L153,91.86a8,8,0,0,0,6.75,4.92l63.91,5.16c.16,0,.25,0,.34.29S224,102.63,223.84,102.73Z"></path></svg>
+        </span>
       </p>
     </div>
     <div class="cg-single-content">
@@ -39,151 +46,6 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam molestie, semper dolor non, venenatis dui. Morbi in enim risus. Nullam ornare rhoncus nisi, eget pellentesque augue pellentesque suscipit. Sed et dignissim metus. Fusce dictum odio eget cursus ultrices. Donec gravida a risus quis condimentum. Sed sed pretium libero, malesuada sollicitudin odio. Nullam felis odio, placerat at rhoncus nec, egestas eget libero. Suspendisse accumsan mi mauris. Donec suscipit, nisl vel convallis varius, metus felis viverra massa, in faucibus erat justo eget nulla. Aliquam vitae orci suscipit, facilisis felis eu, ultricies nisl. In at elit metus.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam molestie, semper dolor non, venenatis dui. Morbi in enim risus. Nullam ornare rhoncus nisi, eget pellentesque augue pellentesque suscipit. Sed et dignissim metus. Fusce dictum odio eget cursus ultrices. Donec gravida a risus quis condimentum. Sed sed pretium libero, malesuada sollicitudin odio. Nullam felis odio, placerat at rhoncus nec, egestas eget libero. Suspendisse accumsan mi mauris. Donec suscipit, nisl vel convallis varius, metus felis viverra massa, in faucibus erat justo eget nulla. Aliquam vitae orci suscipit, facilisis felis eu, ultricies nisl. In at elit metus.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam molestie, semper dolor non, venenatis dui. Morbi in enim risus. Nullam ornare rhoncus nisi, eget pellentesque augue pellentesque suscipit. Sed et dignissim metus. Fusce dictum odio eget cursus ultrices. Donec gravida a risus quis condimentum. Sed sed pretium libero, malesuada sollicitudin odio. Nullam felis odio, placerat at rhoncus nec, egestas eget libero. Suspendisse accumsan mi mauris. Donec suscipit, nisl vel convallis varius, metus felis viverra massa, in faucibus erat justo eget nulla. Aliquam vitae orci suscipit, facilisis felis eu, ultricies nisl. In at elit metus.</p>
-      </div>
-
-      <div class="cg-single-content-sidebar">
-        <div class="sidebar">
-          <div class="sidebar-title">
-            In this post
-          </div>
-
-          <?php get_component('/card/card-location.php')?>
-          <?php get_component('/card/card-location.php')?>
-
-        </div>
-
-        <div class="sidebar">
-          <div class="sidebar-title">
-            Book a tour
-          </div>
-          <div class="sidebar-body">
-            <img class="imge-travel"
-                  src="<?php echo get_theme_file_uri()?>/assets/images/tour.png"
-                  alt="Travel Image">
-
-            <form action="">
-              <input type="text"
-                      placeholder="Name - Lastname"
-                      name=""
-                      id="">
-              <input type="email"
-                      placeholder="Email"
-                      name=""
-                      id="">
-              <input type="tel"
-                      placeholder="Tel"
-                      name=""
-                      id="">
-              <input type="date"
-                      placeholder="Select tour date"
-                      name=""
-                      id="">
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-        </div>
-
-        <div class="sidebar">
-          <div class="sidebar-title">
-            <div>
-              ITINERARY
-            </div>
-            <a href="#" class="btn-more">
-              SEE ALL
-            </a>
-          </div>
-
-          <div class="sidebar-body">
-            <p>
-              <strong>
-                Duration:1 Day | Time: 8:00 AM - 6:30 PM
-              </strong>
-            </p>
-            <p>Morning: Exploring the Iconic Temples </p>
-
-            <p>
-              8:00 AM – Pickup & DepartureMeet at your hotel or designated pickup point and begin
-              the journey to Bangkok’s most revered temples.
-            </p>
-            <p>
-              8:30 AM – Wat Phra Kaew & Grand Palace
-            </p>
-            <ul>
-              <li>The Emerald Buddha Temple, Thailand’s most sacred temple.</li>
-              <li>Marvel at the intricate architecture and golden spires.</li>
-              <li>Visit the Grand Palace, once the official residence of Thai kings.</li>
-            </ul>
-            <p>
-              10:00 AM – Wat Pho (Temple of the Reclining Buddha)
-            </p>
-            <ul>
-              <li>Home to the famous 46-meter-long Reclining Buddha.</li>
-              <li>Experience a traditional Thai massage at the birthplace of Thai massage.</li>
-            </ul>
-            <p>
-              11:00 AM – Wat Arun (Temple of Dawn)
-            </p>
-            <ul>
-              <li>Iconic riverside temple with towering prangs.</li>
-              <li>Climb the central tower for stunning Chao Phraya River views.</li>
-              <li>Midday: Lunch & Cultural Exploration.</li>
-            </ul>
-            <p>
-              12:00 PM – Lunch at a Riverside Restaurant
-            </p>
-            <ul>
-              <li>authentic Thai cuisine with a scenic riverside view.</li>
-            </ul>
-            <p>
-              Afternoon: Hidden Gems & Spiritual Experience
-            </p>
-            <ul>
-              <li>1:30 PM – Wat Rakhang (Temple of Bells).</li>
-              <li>A peaceful temple known for its old bells and serene atmosphere.</li>
-            </ul>
-            <p>
-              2:00 PM – Wat Kalayanamit
-
-            </p>
-            <ul>
-              <li>Houses one of the largest sitting Buddha statues in Bangkok.</li>
-            </ul>
-            <p>
-              2:30 PM – Wat Prayurawongsawat
-
-            </p>
-            <ul>
-              <li>for its unique white chedi and turtle pond.</li>
-            </ul>
-            <p>
-              3:00 PM – Wat Suthat & The Giant Swing
-
-            </p>
-            <ul>
-              <li>Famous for its giant red swing and beautiful murals.</li>
-            </ul>
-            <p>Evening: Sunset & Blessings
-
-            </p>
-            <ul>
-              <li>4:00 PM – Wat Saket (Golden Mount Temple).</li>
-              <li>Climb 344 steps for panoramic views of Bangkok at sunset.</li>
-            </ul>
-            <p>
-              5:30 PM – Wat Traimit (Temple of the Golden Buddha)
-
-            </p>
-            <ul>
-              <li>Home to the world’s largest solid gold Buddha statue.</li>
-              <li>Receive a final blessing for good fortune.</li>
-            </ul>
-            <p>
-              6:30 PM – Return to HotelDrop-off at your hotel or chosen location,
-              concluding a day of spiritual and cultural exploration.
-            </p>
-
-          </div>
-        </div>
       </div>
     </div>
   </div>
