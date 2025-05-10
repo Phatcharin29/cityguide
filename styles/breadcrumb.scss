@@ -1,0 +1,23 @@
+@use './variables.scss' as *;
+
+.cg-breadcrumb {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: 'Inter', serif;
+
+  @include max-w(lg) {
+    justify-content: center;
+  }
+
+  .cg-breadcrumb-item {
+    font-weight: 700;
+    font-size: 14px;
+    color: #B50017;
+    border: none;
+    background: none;
+    display: block;
+    text-decoration: none;
+  }
+}

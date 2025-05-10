@@ -1,0 +1,19 @@
+{
+  "name": "cityguide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "tailwindcss -o ./styles/tailwind.css --watch",
+    "sass": "sass -w styles/main.scss:styles/main.css",
+    "start": "concurrently \"yarn run tailwind\" \"yarn run sass\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "sass": "^1.86.3",
+    "tailwindcss": "^4.1.3"
+  }
+}

@@ -1,0 +1,159 @@
+@use './variables.scss' as *;
+
+.cg-single-title {
+  font-family: 'Inter', serif;
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: #262727;
+
+  @include max-w(lg) {
+    text-align: center;
+  }
+}
+
+.cg-single-subtitle {
+  font-family: 'Inter', serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #B60017;
+
+  @include max-w(lg) {
+    text-align: center;
+  }
+}
+
+.cg-single-content {
+  display: flex;
+  gap: 16px;
+
+  @include max-w(lg) {
+    flex-direction: column;
+  }
+
+  .cg-single-content-inner {
+    gap: 10px;
+    
+    > *:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .cg-single-feature-image img {
+    width: 100%;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    margin-bottom: 24px;
+
+  }
+}
+
+.cg-single-content-sidebar {
+  flex: 0 0 auto;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include max-w(lg) {
+    max-width: 100%;
+  }
+
+  .sidebar {
+    gap: 10px;
+    padding: 20px 12px;
+    border: 1px solid #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .sidebar-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    width: 100%;
+    color: #262727;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E9E9E9;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    margin-bottom: 0;
+
+    a {
+      font-size: 14px;
+      font-weight: 700;
+      color: #B60017;
+      text-decoration: none;
+    }
+  }
+
+  .sidebar-body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #53565A;
+    font-size: 14px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin-bottom: 0;
+      padding-left: 1.5em;
+      list-style: disc;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    input {
+      border: 1px solid #F3F3F3;
+      font-size: 14px;
+      padding: 10px 16px;
+      font-family: "Shippori Mincho", serif;
+    }
+
+    button {
+      background: #B50017;
+      font-size: 14px;
+      padding: 10px 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: none;
+      color: #FFFFFF;
+      font-family: "Inter", sans-serif;
+    }
+
+    .sidebar-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    a {
+      font-weight: 700;
+      color: #B60017;
+      text-decoration: none;
+      font-family: "Inter", sans-serif;
+
+    }
+
+    .btn-more {
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+  }
+}

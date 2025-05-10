@@ -1,0 +1,566 @@
+@use './variables.scss' as *;
+
+.cg-card-primary {
+  display: flex;
+  margin: auto;
+  border: 1px solid #D9D9D9;
+  max-width: 616px;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  background: #FFFFFF;
+
+  .cg-card-image {
+    overflow: hidden;
+    flex: 1 0 auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s cubic-bezier(0,0,0,1);
+    }
+  }
+
+  &:hover {
+    .cg-card-image {
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .cg-card-badge {
+    margin-bottom: auto;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .tag {
+      font-weight: 600;
+      padding: 4px 8px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 4px;
+      color: #FFFFFF;
+      font-size: 12px;
+    }
+  }
+
+  .cg-card-text {
+    gap: 10px;
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 34.09%, rgba(0, 0, 0, 0.8) 90%);
+
+    .cg-card-tags {
+      display: flex;
+      gap: 10px;
+      font-family: 'Inter', serif;
+      margin-top: auto;
+
+      .tag {
+        font-size: 12px;
+        padding: 0;
+        color: #FFFFFF;
+        background: none;
+        border: none;
+        justify-content: space-between;
+        text-decoration: none;
+      }
+    }
+
+
+    .cg-card-content {
+      gap: 10px;
+
+      margin-bottom: 0;
+
+      p {
+        font-family: "Shippori Mincho", serif;
+        margin-bottom: 0;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        color: #FFFFFF;
+        font-size: 20px;
+
+        @include max-w(lg) {
+          font-size: 16px;
+        }
+      }
+
+      .headline {
+        gap: 10px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+        @include max-w(lg) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .cg-card-meta {
+      gap: 10px;
+      align-items: baseline;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      font-family: 'Inter', serif;
+      margin-top: 17px;
+      margin-bottom: 3px;
+
+      .meta-like,
+      .meta-bookmark {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4px;
+        color: #FFFFFF;
+        font-size: 12px;
+      }
+
+      .meta-reading {
+        font-size: 12px;
+        text-align: right;
+        margin-left: auto;
+        margin-bottom: 0;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+.cg-card-featured {
+  display: flex;
+  margin: auto;
+  border: 1px solid #D9D9D9;
+  max-width: 616px;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 616/300;
+  background: #FFFFFF;
+
+  @include max-w(lg) {
+    aspect-ratio: 1/1;
+  }
+
+  .cg-card-image {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    flex: 1 0 auto;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s cubic-bezier(0,0,0,1);
+    }
+
+    @include max-w(lg) {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1/1;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+  }
+
+  &:hover {
+    .cg-card-image {
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .cg-card-badge {
+    margin-bottom: auto;
+    color: #FFFFFF;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    @include max-w(lg) {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .tag {
+      font-weight: 600;
+      padding: 4px 8px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 4px;
+      color: #FFFFFF;
+      font-size: 12px;
+    }
+  }
+
+  .cg-card-text {
+    gap: 10px;
+    padding: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include max-w(lg) {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 34.09%, rgba(0, 0, 0, 0.8) 90%);
+    }
+
+    .cg-card-tags {
+      display: flex;
+      gap: 10px;
+      font-family: 'Inter', serif;
+      
+      @include max-w(lg) {
+        margin-top: auto;
+      }
+
+      .tag {
+        font-size: 12px;
+        padding: 0;
+        color: #B60017;
+        background: none;
+        border: none;
+        justify-content: space-between;
+        text-decoration: none;
+
+        @include max-w(lg) {
+          color: #FFFFFF;
+          font-weight: 600;
+        }
+      }
+    }
+
+
+    .cg-card-content {
+      gap: 10px;
+      margin-bottom: auto;
+      margin-top: auto;
+
+      @include max-w(lg) {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      p {
+        font-family: "Shippori Mincho", serif;
+        margin-bottom: 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        color: #262727;
+
+        @include max-w(lg) {
+          color: #FFFFFF;
+        }
+      }
+
+      .headline {
+        gap: 10px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #262727;
+
+
+        @include max-w(lg) {
+          color: #FFFFFF;
+        }
+      }
+    }
+
+    .cg-card-meta {
+      gap: 10px;
+      align-items: baseline;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      font-family: 'Inter', serif;
+
+      @include max-w(lg) {
+        margin-top: 17px;
+        margin-bottom: 3px;
+      }
+      .meta-like,
+      .meta-bookmark {
+        color: #B60017;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4px;
+        font-size: 12px;
+
+        @include max-w(lg) {
+          color: #FFFFFF;
+        }
+      }
+
+      .meta-reading {
+        font-size: 12px;
+        text-align: right;
+        color: #B60017;
+        margin-left: auto;
+        margin-bottom: 0;
+
+        @include max-w(lg) {
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+
+.cg-card-secondary {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background: #FFF;
+  border: 1px solid #D9D9D9;
+  max-width: 300px;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+
+  @include max-w(lg) {
+    aspect-ratio: 1/1;
+  }
+
+  .cg-card-image {
+    width: 100%;
+    overflow: hidden;
+    flex: 0 0 auto;
+    position: relative;
+    aspect-ratio: 2/1;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s cubic-bezier(0,0,0,1);
+    }
+
+    @include max-w(lg) {
+      width: 100%;
+      height: auto;
+      z-index: 0;
+    }
+
+
+    .cg-card-badge {
+      margin-bottom: auto;
+      color: #FFFFFF;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 6px 4px;
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      .tag {
+        font-weight: 600;
+        padding: 4px 8px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 4px;
+        color: #FFFFFF;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &:hover {
+    .cg-card-image {
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .cg-card-text {
+    padding: 6px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    flex: 1 0 auto;
+
+    @include max-w(lg) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cg-card-tags {
+      display: flex;
+      gap: 10px;
+      font-family: 'Inter', serif;
+      justify-content: center;
+      width: 100%;
+
+      .tag {
+        font-size: 12px;
+        padding: 0;
+        color: #B60017;
+        background: none;
+        border: none;
+        justify-content: space-between;
+        text-decoration: none;
+
+        @include max-w(lg) {
+        }
+      }
+    }
+
+
+    .cg-card-content {
+      gap: 10px;
+      margin-bottom: auto;
+      text-align: center;
+
+      @include max-w(lg) {
+        margin-bottom: 0;
+      }
+
+      p {
+        font-family: "Shippori Mincho", serif;
+        margin-bottom: 0;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        color: #262727;
+
+        @include max-w(lg) {
+          color: #FFFFFF;
+        }
+      }
+
+      .headline {
+        gap: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #262727;
+      }
+    }
+
+    .cg-card-meta {
+      gap: 10px;
+      align-items: baseline;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      font-family: 'Inter', serif;
+      margin-top: 16px;
+
+      @include max-w(lg) {
+        margin-top: 17px;
+        margin-bottom: 3px;
+      }
+      .meta-like,
+      .meta-bookmark {
+        color: #B60017;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4px;
+        font-size: 12px;
+
+      }
+
+      .meta-reading {
+        font-size: 12px;
+        text-align: right;
+        color: #B60017;
+        margin-left: auto;
+        margin-bottom: 0;
+
+      }
+    }
+  }
+}
+
+
+.cg-card-location {
+  align-items: center;
+  border: 1px solid #F3F3F3;
+  display: flex;
+
+  .cg-card-image {
+    width: 160.5px;
+    height: 158px;
+  }
+
+  .cg-card-text {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: 'Inter', serif;
+  }
+
+  .cg-card-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262727;
+    margin-bottom: 0;
+  }
+
+  .cg-card-meta {
+    font-size: 13px;
+    color: #53565A;
+
+    .rating {
+      display: flex;
+      gap: 4px;
+      svg {
+        width: 16px;
+        height: 16px;
+        color: #B50017;
+      }
+    }
+  }
+}

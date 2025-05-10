@@ -1,0 +1,81 @@
+@use './variables.scss' as *;
+
+.cg-footer {
+  background: $dark1;
+
+  a {
+    color: #FFFFFF;
+  }
+
+  .cg-footer-upper {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 33px 16px;
+      padding-top: 12px;
+      background-position: 12px;
+
+      @include max-w(xl) {
+        flex-direction: column;
+        padding-top: 36px;
+        padding-bottom: 16px;
+      }
+    }
+    .cg-footer-upper-logo {
+      
+    }
+    .cg-footer-upper-menu {
+      ul {
+        display: flex;
+        gap: 0;
+        @include max-w(xl) {
+          flex-direction: column;
+          gap: 0;
+        }
+        li {
+          a {
+            padding: 8px;
+            text-transform: uppercase;
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            @include max-w(xl) {
+              padding: 4px 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .cg-footer-lower {
+    border-top: 1px solid rgba($light3, .1);
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      @include max-w(xl) {
+        flex-direction: column;
+        padding-top: 16px;
+        padding-bottom: 36px;
+      }
+    }
+    .cg-footer-lower-credit {
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .cg-footer-lower-menu {
+      ul {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

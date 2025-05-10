@@ -1,0 +1,46 @@
+@use 'sass:map';
+
+$breakpoints: (
+  xs: 480px,
+  sm: 640px,
+  md: 768px, // Tablet
+  lg: 1024px,
+  xl: 1280px, // Desktop
+  xxl: 1536px
+);
+
+@mixin min-w($breakpoint) {
+  $value: map.get($breakpoints, $breakpoint);
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for `#{$breakpoint}` in \$breakpoints map.";
+  }
+}
+
+@mixin max-w($breakpoint) {
+  $value: map.get($breakpoints, $breakpoint);
+  @if $value {
+    $adjusted: $value - 0.98px;
+    @media (max-width: $adjusted) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for `#{$breakpoint}` in \$breakpoints map.";
+  }
+}
+
+$red1: #B60017;
+$red2: #D8001B;
+$red3: #A20014;
+$red4: #B50017;
+$dark1: #262727;
+$dark2: #1E1E1E;
+$dark3: #333333;
+$light1: #E9E9E9;
+$light2: #F3F3F3;
+$light3: #EAEAEA;
+$black: var(--black);
+$white: var(--white);
