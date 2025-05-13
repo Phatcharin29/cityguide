@@ -1,0 +1,92 @@
+@use './variables.scss' as *;
+
+.cg-archive-nav {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  color: #262727;
+  display: flex;
+  align-items: baseline;
+  gap: 8px 24px;
+  text-transform: uppercase;
+
+  @include max-w(lg) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cg-archive-nav-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #B60017;
+
+    @include max-w(lg) {
+      font-size: 28px;
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 24px;
+  }
+  a {
+    color: #262727;
+  }
+}
+.cg-archive-main {
+  .cg-card-secondary {
+    aspect-ratio: auto;
+  }
+}
+
+.cg-archive-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.wp-pagenavi {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  margin-top: 24px;
+  
+  .page,
+  .extend,
+  .current,
+  .first,
+  .last {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    color: #262727;
+    text-decoration: none;
+    border: none;
+    margin: 0;
+    font-weight: 700;
+  }
+  
+  .current {
+    background-color: #B60017; /* Red circle */
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  .extend {
+    background: none;
+    color: #999;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    border: none;
+  }
+}
+
+.cg-archive-banner-swiper {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.25);
+}

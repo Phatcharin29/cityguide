@@ -1,31 +1,68 @@
 
-<a href="#" class="cg-card-primary">
+<a href="<?php the_permalink()?>" class="cg-card-primary">
   <div class="cg-card-image">
-    <img
-          src="<?php echo get_theme_file_uri()?>/assets/images/orderfood.png"
-          alt="Orderfood">
+    <?php if(have_rows('feature')) {
+      while(have_rows('feature')) {
+        the_row();
+        $image = get_sub_field('feature_thumbnail');
+        if($image) {
+          echo wp_get_attachment_image($image['ID'], 'full');
+        } else {
+          the_post_thumbnail();
+        }
+      }
+    }; ?>
   </div>
   <div class="cg-card-text">
     <div class="cg-card-badge">
+      <?php if(get_field('video') && get_field('video') !== '') :?>
       <div class="video"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm40.55,110.58-52,36A8,8,0,0,1,104,164V92a8,8,0,0,1,12.55-6.58l52,36a8,8,0,0,1,0,13.16Z"></path></svg></div>
-      <div class="tag">Bangkok</div>
+      <?php endif; ?>
+      <?php if(have_rows('relationship')) {
+        while(have_rows('relationship')) {
+          the_row();
+          $des = get_sub_field('related_destination');
+          if ($des) {
+          ?>
+            <div class="tag"><?php echo esc_html($des->post_title) ?></div>
+          <?php }
+        }
+      }; ?>
     </div>
-    <div class="cg-card-tags">
-      <div
-          class="tag">Religious</div>
-      <div
-          class="tag">Relaxation</div>
-      <div
-          class="tag">Day Trip</div>
-    </div>
+    <?php $tags = get_the_tags(); // Gets tags for the current post
+
+    if ($tags) : ?>
+      <div class="cg-card-tags">
+        <?php foreach ($tags as $tag) : ?>
+          <div class="tag"><?php echo esc_html($tag->name); ?></div>
+        <?php endforeach; ?>
+      </div>
+    <?php endif; ?>
+
     <div class="cg-card-content">
       <div class="headline line-clamp-2">
-        Top 5 Cook-to-Order Food
+        <?php if(have_rows('feature')) {
+          while(have_rows('feature')) {
+            the_row();
+            if(get_sub_field('feature_title')) {
+              the_sub_field('feature_title');
+            } else {
+              the_title();
+            }
+          }
+        }; ?>
       </div>
       <p class="line-clamp-2">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur soluta
-        <br>recusandae atque, hic totam ut nihil fugit sapiente ad
-        <br> molestiae, ab odit quisquam. Nobis atque veritatis non ut! Earum, vel!
+      <?php if(have_rows('feature')) {
+          while(have_rows('feature')) {
+            the_row();
+            if(get_sub_field('feature_description')) {
+              the_sub_field('feature_description');
+            } else {
+              the_excerpt(  );
+            }
+          }
+        }; ?>
       </p>
     </div>
     <div class="cg-card-meta">
@@ -51,7 +88,23 @@
         </svg>
         999
       </div> -->
-      <div class="meta-reading">5 min. read</div>
+      <div class="meta-reading">
+        <?php $minutes;
+        if(get_field('reading_length')) {
+          $minutes = get_field('reading_length');
+        } else {
+          $content = get_the_content();
+          $content = strip_shortcodes($content);          // Remove shortcodes
+          $content = wp_strip_all_tags($content);         // Remove HTML tags
+          $word_count = str_word_count($content);
+          
+          $words_per_minute = 200;                        // You can change to 250 if you prefer
+          $minutes = ceil($word_count / $words_per_minute);
+        }
+        
+        echo "{$minutes} min. read";
+        ?>
+      </div>
     </div>
   </div>
 </a>

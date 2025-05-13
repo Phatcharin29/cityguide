@@ -1,4 +1,14 @@
 const body = document.body
+const header = document.querySelector('.cg-header')
+const headerMain = document.querySelector('.cg-header-main')
+const headerSubNav = document.querySelector('.cg-header-subnav')
+
+const toggleScrolledHeader = () => {
+  window.scrollY > (headerMain.getBoundingClientRect().top + headerMain.getBoundingClientRect().height * 3) ? 
+    header.classList.add('scrolled') : header.classList.remove('scrolled')
+}
+window.addEventListener('load', toggleScrolledHeader)
+window.addEventListener('scroll', toggleScrolledHeader)
 
 const headerLvl2Swiper = new Swiper('.cg-header-lvl2-swiper', {
   slidesPerView: 'auto',
@@ -86,8 +96,37 @@ const sectionTopicSwiperContent = new Swiper('.cg-section-topic-swiper-content',
     }
   }
 })
+const archiveBannerSwiper = new Swiper('.cg-archive-banner-swiper', {
+  effect: 'coverflow',
+  spaceBetween: 0,
+  slidesPerView: 1,
+  coverflowEffect: {
+    slideShadows: false,
+    scale: 1.2
+  },
+  autoplay: {
+    speed: 7000
+  },
+  speed: 1000,
+})
 
 const bannerSwiper = new Swiper('.cg-banner-swiper', {
   spaceBetween: 0,
   slidesPerView: 1
+})
+
+const singleVideo = document.querySelectorAll('.cg-single-video')
+
+singleVideo?.forEach((e) => {
+  document.addEventListener('DOMContentLoaded', function () {
+    e.querySelectorAll('iframe').forEach(function (iframe) {
+      const w = iframe.getAttribute('width');
+      const h = iframe.getAttribute('height');
+      if (w && h) {
+        iframe.style.aspectRatio = `${w} / ${h}`; // Tell the browser the correct ratio
+        iframe.removeAttribute('width');
+        iframe.removeAttribute('height');
+      }
+    });
+  });
 })

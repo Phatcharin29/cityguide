@@ -1,7 +1,15 @@
 <?php get_component('/header.php') ?>
 
 <section class="py-9">
-  <div class="container">
+  <div class="container <?php if(have_rows('relationship')) :
+      while(have_rows('relationship')) :
+        the_row(); 
+        if(!get_sub_field('related_places') && !get_sub_field('related_package') && !get_sub_field('related_itinerary')) {
+          echo 'max-w-[900px]';
+        }
+      endwhile;
+    endif;
+    ?>">
     <div class="mb-3">
       <div class="cg-breadcrumb">
         <svg width="20"
@@ -19,172 +27,193 @@
         </a>
       </div>
       <h1 class="cg-single-title">
-        1 Day trip of 9 temples
+        <?php the_title()?>
       </h1>
-      <p class="cg-single-subtitle">
-        Chaophaya, Bangkok
-      </p>
+      <?php if(have_rows('relationship')) :
+          while(have_rows('relationship')) :
+            the_row(); 
+            ?>
+            <a href="<?php echo home_url( '/destination/'.get_sub_field('related_destination')->post_name )?>" class="cg-single-subtitle">
+            <?php echo get_sub_field('related_destination')->post_title; ?>
+            </a>
+          <?php endwhile;
+        endif;?>
     </div>
     <div class="cg-single-content">
       <div class="cg-single-content-inner">
         <div class="cg-single-feature-image">
-          <img src="<?php echo get_theme_file_uri()?>/assets/images/Chaophaya.png"
-                alt="Chaophaya">
+          <?php the_post_thumbnail()?>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam molestie, semper dolor non, venenatis dui. Morbi in enim risus. Nullam ornare rhoncus nisi, eget pellentesque augue pellentesque suscipit. Sed et dignissim metus. Fusce dictum odio eget cursus ultrices. Donec gravida a risus quis condimentum. Sed sed pretium libero, malesuada sollicitudin odio. Nullam felis odio, placerat at rhoncus nec, egestas eget libero. Suspendisse accumsan mi mauris. Donec suscipit, nisl vel convallis varius, metus felis viverra massa, in faucibus erat justo eget nulla. Aliquam vitae orci suscipit, facilisis felis eu, ultricies nisl. In at elit metus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam molestie, semper dolor non, venenatis dui. Morbi in enim risus. Nullam ornare rhoncus nisi, eget pellentesque augue pellentesque suscipit. Sed et dignissim metus. Fusce dictum odio eget cursus ultrices. Donec gravida a risus quis condimentum. Sed sed pretium libero, malesuada sollicitudin odio. Nullam felis odio, placerat at rhoncus nec, egestas eget libero. Suspendisse accumsan mi mauris. Donec suscipit, nisl vel convallis varius, metus felis viverra massa, in faucibus erat justo eget nulla. Aliquam vitae orci suscipit, facilisis felis eu, ultricies nisl. In at elit metus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam molestie, semper dolor non, venenatis dui. Morbi in enim risus. Nullam ornare rhoncus nisi, eget pellentesque augue pellentesque suscipit. Sed et dignissim metus. Fusce dictum odio eget cursus ultrices. Donec gravida a risus quis condimentum. Sed sed pretium libero, malesuada sollicitudin odio. Nullam felis odio, placerat at rhoncus nec, egestas eget libero. Suspendisse accumsan mi mauris. Donec suscipit, nisl vel convallis varius, metus felis viverra massa, in faucibus erat justo eget nulla. Aliquam vitae orci suscipit, facilisis felis eu, ultricies nisl. In at elit metus.</p>
-        <?php get_component('/card/card-featured.php')?>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam molestie, semper dolor non, venenatis dui. Morbi in enim risus. Nullam ornare rhoncus nisi, eget pellentesque augue pellentesque suscipit. Sed et dignissim metus. Fusce dictum odio eget cursus ultrices. Donec gravida a risus quis condimentum. Sed sed pretium libero, malesuada sollicitudin odio. Nullam felis odio, placerat at rhoncus nec, egestas eget libero. Suspendisse accumsan mi mauris. Donec suscipit, nisl vel convallis varius, metus felis viverra massa, in faucibus erat justo eget nulla. Aliquam vitae orci suscipit, facilisis felis eu, ultricies nisl. In at elit metus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam molestie, semper dolor non, venenatis dui. Morbi in enim risus. Nullam ornare rhoncus nisi, eget pellentesque augue pellentesque suscipit. Sed et dignissim metus. Fusce dictum odio eget cursus ultrices. Donec gravida a risus quis condimentum. Sed sed pretium libero, malesuada sollicitudin odio. Nullam felis odio, placerat at rhoncus nec, egestas eget libero. Suspendisse accumsan mi mauris. Donec suscipit, nisl vel convallis varius, metus felis viverra massa, in faucibus erat justo eget nulla. Aliquam vitae orci suscipit, facilisis felis eu, ultricies nisl. In at elit metus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam molestie, semper dolor non, venenatis dui. Morbi in enim risus. Nullam ornare rhoncus nisi, eget pellentesque augue pellentesque suscipit. Sed et dignissim metus. Fusce dictum odio eget cursus ultrices. Donec gravida a risus quis condimentum. Sed sed pretium libero, malesuada sollicitudin odio. Nullam felis odio, placerat at rhoncus nec, egestas eget libero. Suspendisse accumsan mi mauris. Donec suscipit, nisl vel convallis varius, metus felis viverra massa, in faucibus erat justo eget nulla. Aliquam vitae orci suscipit, facilisis felis eu, ultricies nisl. In at elit metus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam molestie, semper dolor non, venenatis dui. Morbi in enim risus. Nullam ornare rhoncus nisi, eget pellentesque augue pellentesque suscipit. Sed et dignissim metus. Fusce dictum odio eget cursus ultrices. Donec gravida a risus quis condimentum. Sed sed pretium libero, malesuada sollicitudin odio. Nullam felis odio, placerat at rhoncus nec, egestas eget libero. Suspendisse accumsan mi mauris. Donec suscipit, nisl vel convallis varius, metus felis viverra massa, in faucibus erat justo eget nulla. Aliquam vitae orci suscipit, facilisis felis eu, ultricies nisl. In at elit metus.</p>
+        <div class="cg-single-video"><?php echo get_field('video'); ?></div>
+        <?php the_content(); ?>
       </div>
 
-      <div class="cg-single-content-sidebar">
-        <div class="sidebar">
-          <div class="sidebar-title">
-            In this post
-          </div>
+      <?php if(have_rows('relationship')) :
+          while(have_rows('relationship')) :
+            the_row(); ?>
+            <div class="cg-single-content-sidebar">
+              <?php if(get_sub_field('related_places')) :
+                $places = get_sub_field('related_places');
+                ?>
+              <div class="sidebar">
+                <div class="sidebar-title">
+                  In this post
+                </div>
 
-          <?php get_component('/card/card-location.php')?>
-          <?php get_component('/card/card-location.php')?>
+                <?php foreach($places as $place) :
+                  $data = get_post($place->ID)?>
+                <?php get_component('/card/card-location.php', $data)?>
+                <?php endforeach; ?>
 
-        </div>
+              </div>
+              <?php endif; ?>
 
-        <div class="sidebar">
-          <div class="sidebar-title">
-            Book a tour
-          </div>
-          <div class="sidebar-body">
-            <img class="imge-travel"
-                  src="<?php echo get_theme_file_uri()?>/assets/images/tour.png"
-                  alt="Travel Image">
+              <?php if(get_sub_field('related_package')) :
+                
+                $package = get_post(get_sub_field('related_package')->ID);
+                ?>
+              <div class="sidebar">
+                <div class="sidebar-title">
+                  Book a tour
+                </div>
+                <div class="sidebar-body">
+                  <div class="flex flex-col gap-2">
+                    <p class="text-sm font-bold"><?php echo get_the_title($package);?></p>
+                    <p class="line-clamp-3"><?php echo get_the_excerpt($package);?></p>
+                    <a href="<?php echo get_permalink( $package )?>"><?php echo get_the_post_thumbnail( $package, 'medium_large' ) ?></a>
+                  </div>
 
-            <form action="">
-              <input type="text"
-                      placeholder="Name - Lastname"
-                      name=""
-                      id="">
-              <input type="email"
-                      placeholder="Email"
-                      name=""
-                      id="">
-              <input type="tel"
-                      placeholder="Tel"
-                      name=""
-                      id="">
-              <input type="date"
-                      placeholder="Select tour date"
-                      name=""
-                      id="">
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-        </div>
+                  <form action="">
+                    <input type="text"
+                            placeholder="Name - Lastname"
+                            name=""
+                            id="">
+                    <input type="email"
+                            placeholder="Email"
+                            name=""
+                            id="">
+                    <input type="tel"
+                            placeholder="Tel"
+                            name=""
+                            id="">
+                    <input type="date"
+                            placeholder="Select tour date"
+                            name=""
+                            id="">
+                    <button type="submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+              <?php endif; ?>
 
-        <div class="sidebar">
-          <div class="sidebar-title">
-            <div>
-              ITINERARY
+              <?php if(get_sub_field('related_itinerary')) :
+                print_r(get_sub_field('related_itinerary'));?>
+              <div class="sidebar">
+                <div class="sidebar-title">
+                  <div>
+                    ITINERARY
+                  </div>
+                  <a href="#" class="btn-more">
+                    SEE ALL
+                  </a>
+                </div>
+
+                <div class="sidebar-body">
+                  <p>
+                    <strong>
+                      Duration:1 Day | Time: 8:00 AM - 6:30 PM
+                    </strong>
+                  </p>
+                  <p>Morning: Exploring the Iconic Temples </p>
+
+                  <p>
+                    8:00 AM – Pickup & DepartureMeet at your hotel or designated pickup point and begin
+                    the journey to Bangkok’s most revered temples.
+                  </p>
+                  <p>
+                    8:30 AM – Wat Phra Kaew & Grand Palace
+                  </p>
+                  <ul>
+                    <li>The Emerald Buddha Temple, Thailand’s most sacred temple.</li>
+                    <li>Marvel at the intricate architecture and golden spires.</li>
+                    <li>Visit the Grand Palace, once the official residence of Thai kings.</li>
+                  </ul>
+                  <p>
+                    10:00 AM – Wat Pho (Temple of the Reclining Buddha)
+                  </p>
+                  <ul>
+                    <li>Home to the famous 46-meter-long Reclining Buddha.</li>
+                    <li>Experience a traditional Thai massage at the birthplace of Thai massage.</li>
+                  </ul>
+                  <p>
+                    11:00 AM – Wat Arun (Temple of Dawn)
+                  </p>
+                  <ul>
+                    <li>Iconic riverside temple with towering prangs.</li>
+                    <li>Climb the central tower for stunning Chao Phraya River views.</li>
+                    <li>Midday: Lunch & Cultural Exploration.</li>
+                  </ul>
+                  <p>
+                    12:00 PM – Lunch at a Riverside Restaurant
+                  </p>
+                  <ul>
+                    <li>authentic Thai cuisine with a scenic riverside view.</li>
+                  </ul>
+                  <p>
+                    Afternoon: Hidden Gems & Spiritual Experience
+                  </p>
+                  <ul>
+                    <li>1:30 PM – Wat Rakhang (Temple of Bells).</li>
+                    <li>A peaceful temple known for its old bells and serene atmosphere.</li>
+                  </ul>
+                  <p>
+                    2:00 PM – Wat Kalayanamit
+
+                  </p>
+                  <ul>
+                    <li>Houses one of the largest sitting Buddha statues in Bangkok.</li>
+                  </ul>
+                  <p>
+                    2:30 PM – Wat Prayurawongsawat
+
+                  </p>
+                  <ul>
+                    <li>for its unique white chedi and turtle pond.</li>
+                  </ul>
+                  <p>
+                    3:00 PM – Wat Suthat & The Giant Swing
+
+                  </p>
+                  <ul>
+                    <li>Famous for its giant red swing and beautiful murals.</li>
+                  </ul>
+                  <p>Evening: Sunset & Blessings
+
+                  </p>
+                  <ul>
+                    <li>4:00 PM – Wat Saket (Golden Mount Temple).</li>
+                    <li>Climb 344 steps for panoramic views of Bangkok at sunset.</li>
+                  </ul>
+                  <p>
+                    5:30 PM – Wat Traimit (Temple of the Golden Buddha)
+
+                  </p>
+                  <ul>
+                    <li>Home to the world’s largest solid gold Buddha statue.</li>
+                    <li>Receive a final blessing for good fortune.</li>
+                  </ul>
+                  <p>
+                    6:30 PM – Return to HotelDrop-off at your hotel or chosen location,
+                    concluding a day of spiritual and cultural exploration.
+                  </p>
+
+                </div>
+              </div>
+              <?php endif; ?>
             </div>
-            <a href="#" class="btn-more">
-              SEE ALL
-            </a>
-          </div>
 
-          <div class="sidebar-body">
-            <p>
-              <strong>
-                Duration:1 Day | Time: 8:00 AM - 6:30 PM
-              </strong>
-            </p>
-            <p>Morning: Exploring the Iconic Temples </p>
-
-            <p>
-              8:00 AM – Pickup & DepartureMeet at your hotel or designated pickup point and begin
-              the journey to Bangkok’s most revered temples.
-            </p>
-            <p>
-              8:30 AM – Wat Phra Kaew & Grand Palace
-            </p>
-            <ul>
-              <li>The Emerald Buddha Temple, Thailand’s most sacred temple.</li>
-              <li>Marvel at the intricate architecture and golden spires.</li>
-              <li>Visit the Grand Palace, once the official residence of Thai kings.</li>
-            </ul>
-            <p>
-              10:00 AM – Wat Pho (Temple of the Reclining Buddha)
-            </p>
-            <ul>
-              <li>Home to the famous 46-meter-long Reclining Buddha.</li>
-              <li>Experience a traditional Thai massage at the birthplace of Thai massage.</li>
-            </ul>
-            <p>
-              11:00 AM – Wat Arun (Temple of Dawn)
-            </p>
-            <ul>
-              <li>Iconic riverside temple with towering prangs.</li>
-              <li>Climb the central tower for stunning Chao Phraya River views.</li>
-              <li>Midday: Lunch & Cultural Exploration.</li>
-            </ul>
-            <p>
-              12:00 PM – Lunch at a Riverside Restaurant
-            </p>
-            <ul>
-              <li>authentic Thai cuisine with a scenic riverside view.</li>
-            </ul>
-            <p>
-              Afternoon: Hidden Gems & Spiritual Experience
-            </p>
-            <ul>
-              <li>1:30 PM – Wat Rakhang (Temple of Bells).</li>
-              <li>A peaceful temple known for its old bells and serene atmosphere.</li>
-            </ul>
-            <p>
-              2:00 PM – Wat Kalayanamit
-
-            </p>
-            <ul>
-              <li>Houses one of the largest sitting Buddha statues in Bangkok.</li>
-            </ul>
-            <p>
-              2:30 PM – Wat Prayurawongsawat
-
-            </p>
-            <ul>
-              <li>for its unique white chedi and turtle pond.</li>
-            </ul>
-            <p>
-              3:00 PM – Wat Suthat & The Giant Swing
-
-            </p>
-            <ul>
-              <li>Famous for its giant red swing and beautiful murals.</li>
-            </ul>
-            <p>Evening: Sunset & Blessings
-
-            </p>
-            <ul>
-              <li>4:00 PM – Wat Saket (Golden Mount Temple).</li>
-              <li>Climb 344 steps for panoramic views of Bangkok at sunset.</li>
-            </ul>
-            <p>
-              5:30 PM – Wat Traimit (Temple of the Golden Buddha)
-
-            </p>
-            <ul>
-              <li>Home to the world’s largest solid gold Buddha statue.</li>
-              <li>Receive a final blessing for good fortune.</li>
-            </ul>
-            <p>
-              6:30 PM – Return to HotelDrop-off at your hotel or chosen location,
-              concluding a day of spiritual and cultural exploration.
-            </p>
-
-          </div>
-        </div>
-      </div>
+      <?php endwhile;
+        endif;?>
     </div>
   </div>
 </section>

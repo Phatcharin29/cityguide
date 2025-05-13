@@ -1,5 +1,13 @@
-<?php function get_component($path) {
-  return include get_stylesheet_directory(  ) . "/components" . $path;
+<?php function get_component($path, $data = null, $return = false) {
+  $fullPath = get_stylesheet_directory(  ) . "/components" . $path;
+
+	if ($return) {
+		ob_start();
+		include $fullPath;
+		return ob_get_clean();
+	} else {
+			include $fullPath;
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
@@ -26,3 +34,11 @@ function register_theme_menu() {
 	register_nav_menus( $menus );
 }
 add_action( 'init', 'register_theme_menu' );
+
+function set_query_defaults( $query ) {
+	if ( !is_admin() && $query->is_main_query() && $query->is_archive() ) {
+			$query->set( 'posts_per_page', 26 );
+			$query->set( 'paged', get_query_var('paged') ? get_query_var('paged') : 1);
+	}
+}
+add_action( 'pre_get_posts', 'set_query_defaults' );

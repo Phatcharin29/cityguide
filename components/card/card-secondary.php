@@ -1,29 +1,43 @@
-<a href="#" class="cg-card-secondary">
+<a href="<?php the_permalink()?>" class="cg-card-secondary">
   <div class="cg-card-image">
-    <img
-          src="<?php echo get_theme_file_uri()?>/assets/images/orderfood.png"
-          alt="Orderfood">
-
+    <?php the_post_thumbnail();?>
     <div class="cg-card-badge">
+      <?php if(get_field('video') && get_field('video') !== '') :?>
       <div class="video"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm40.55,110.58-52,36A8,8,0,0,1,104,164V92a8,8,0,0,1,12.55-6.58l52,36a8,8,0,0,1,0,13.16Z"></path></svg></div>
-      <div class="tag">Bangkok</div>
+      <?php endif; ?>
+      <?php if(have_rows('relationship')) {
+        while(have_rows('relationship')) {
+          the_row();
+          $des = get_sub_field('related_destination');
+          if ($des) {
+          ?>
+            <div class="tag"><?php echo esc_html($des->post_title) ?></div>
+          <?php }
+        }
+      }; ?>
     </div>
   </div>
   <div class="cg-card-text">
     <div class="cg-card-tags">
-      <div
-          class="tag">Religious</div>
-      <div
-          class="tag">Relaxation</div>
-      <div
-          class="tag">Day Trip</div>
+    <?php $tags = get_the_tags(); // Gets tags for the current post
+    if ($tags) : ?>
+        <?php foreach ($tags as $tag) : ?>
+          <div class="tag"><?php echo esc_html($tag->name); ?></div>
+        <?php endforeach; ?>
+        <?php endif; ?>
     </div>
     <div class="cg-card-content">
-      <div class="headline line-clamp-3">
-        Icon siam Luxury Shopping mallIcon siam Luxury Shopping mallIcon siam Luxury Shopping mall
+      <div class="headline h-[2lh] line-clamp-2">
+        <?php the_title(); ?>
       </div>
+      <?php /*<p class="line-clamp-2">
+        <?php echo get_the_excerpt();?>
+      </p> */?>
     </div>
     <div class="cg-card-meta">
+      <div class="meta-date">
+        <?php echo get_the_date('F j, Y');?>
+      </div>
       <!-- <div class='meta-like'>
         <svg width="16"
               height="16"
@@ -46,7 +60,23 @@
         </svg>
         999
       </div> -->
-      <div class="meta-reading">5 min. read</div>
+      <div class="meta-reading">
+        <?php $minutes;
+        if(get_field('reading_length')) {
+          $minutes = get_field('reading_length');
+        } else {
+          $content = get_the_content();
+          $content = strip_shortcodes($content);          // Remove shortcodes
+          $content = wp_strip_all_tags($content);         // Remove HTML tags
+          $word_count = str_word_count($content);
+          
+          $words_per_minute = 200;                        // You can change to 250 if you prefer
+          $minutes = ceil($word_count / $words_per_minute);
+        }
+        
+        echo "{$minutes} min. read";
+        ?>
+      </div>
     </div>
   </div>
 </a>

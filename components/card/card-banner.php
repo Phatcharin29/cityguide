@@ -1,17 +1,6 @@
-
-<a href="<?php the_permalink()?>" class="cg-card-featured">
+<a href="<?php the_permalink()?>" class="cg-card-banner">
   <div class="cg-card-image">
-    <?php if(have_rows('feature')) {
-      while(have_rows('feature')) {
-        the_row();
-        $image = get_sub_field('feature_thumbnail');
-        if($image) {
-          echo wp_get_attachment_image($image['ID'], 'full');
-        } else {
-          the_post_thumbnail();
-        }
-      }
-    }; ?>
+    <?php the_post_thumbnail();?>
     <div class="cg-card-badge">
       <?php if(get_field('video') && get_field('video') !== '') :?>
       <div class="video"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm40.55,110.58-52,36A8,8,0,0,1,104,164V92a8,8,0,0,1,12.55-6.58l52,36a8,8,0,0,1,0,13.16Z"></path></svg></div>
@@ -30,7 +19,6 @@
   </div>
   <div class="cg-card-text">
     <?php $tags = get_the_tags(); // Gets tags for the current post
-
     if ($tags) : ?>
       <div class="cg-card-tags">
         <?php foreach ($tags as $tag) : ?>
@@ -38,34 +26,18 @@
         <?php endforeach; ?>
       </div>
     <?php endif; ?>
-
     <div class="cg-card-content">
-      <div class="headline line-clamp-2">
-        <?php if(have_rows('feature')) {
-          while(have_rows('feature')) {
-            the_row();
-            if(get_sub_field('feature_title')) {
-              the_sub_field('feature_title');
-            } else {
-              the_title();
-            }
-          }
-        }; ?>
+      <div class="headline line-clamp-3">
+        <?php the_title(); ?>
       </div>
       <p class="line-clamp-2">
-      <?php if(have_rows('feature')) {
-          while(have_rows('feature')) {
-            the_row();
-            if(get_sub_field('feature_description')) {
-              the_sub_field('feature_description');
-            } else {
-              the_excerpt(  );
-            }
-          }
-        }; ?>
+        <?php echo get_the_excerpt();?>
       </p>
     </div>
     <div class="cg-card-meta">
+      <div class="meta-date">
+        <?php echo get_the_date('F j, Y');?>
+      </div>
       <!-- <div class='meta-like'>
         <svg width="16"
               height="16"

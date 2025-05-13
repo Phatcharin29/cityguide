@@ -72,6 +72,7 @@
       gap: 10px;
       font-family: 'Inter', serif;
       margin-top: auto;
+      text-transform: capitalize;
 
       .tag {
         font-size: 12px;
@@ -87,8 +88,8 @@
 
     .cg-card-content {
       gap: 10px;
-
       margin-bottom: 0;
+      width: 100%;
 
       p {
         font-family: "Shippori Mincho", serif;
@@ -106,6 +107,7 @@
       }
 
       .headline {
+        width: 100%;
         gap: 10px;
         font-weight: 700;
         font-size: 24px;
@@ -113,6 +115,7 @@
         letter-spacing: 0%;
         text-transform: uppercase;
         color: #FFFFFF;
+        width: 100%;
 
         @include max-w(lg) {
           font-size: 20px;
@@ -129,6 +132,8 @@
       font-family: 'Inter', serif;
       margin-top: 17px;
       margin-bottom: 3px;
+      font-size: 12px;
+      color: #B60017;
 
       .meta-like,
       .meta-bookmark {
@@ -143,6 +148,7 @@
 
       .meta-reading {
         font-size: 12px;
+        font-weight: 600;
         text-align: right;
         margin-left: auto;
         margin-bottom: 0;
@@ -246,6 +252,7 @@
       display: flex;
       gap: 10px;
       font-family: 'Inter', serif;
+      text-transform: capitalize;
       
       @include max-w(lg) {
         margin-top: auto;
@@ -272,6 +279,7 @@
       gap: 10px;
       margin-bottom: auto;
       margin-top: auto;
+      width: 100%;
 
       @include max-w(lg) {
         margin-top: 0;
@@ -315,6 +323,8 @@
       justify-content: flex-start;
       width: 100%;
       font-family: 'Inter', serif;
+      font-size: 12px;
+      color: #B60017;
 
       @include max-w(lg) {
         margin-top: 17px;
@@ -337,6 +347,7 @@
 
       .meta-reading {
         font-size: 12px;
+        font-weight: 600;
         text-align: right;
         color: #B60017;
         margin-left: auto;
@@ -355,8 +366,8 @@
   flex-direction: column;
   margin: auto;
   background: #FFF;
-  border: 1px solid #D9D9D9;
-  max-width: 300px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+  //max-width: 300px;
   position: relative;
   overflow: hidden;
   aspect-ratio: 1/1;
@@ -436,6 +447,8 @@
       font-family: 'Inter', serif;
       justify-content: center;
       width: 100%;
+      height: 1lh;
+      text-transform: capitalize;
 
       .tag {
         font-size: 12px;
@@ -456,6 +469,7 @@
       gap: 10px;
       margin-bottom: auto;
       text-align: center;
+      width: 100%;
 
       @include max-w(lg) {
         margin-bottom: 0;
@@ -469,10 +483,6 @@
         line-height: 150%;
         letter-spacing: 0%;
         color: #262727;
-
-        @include max-w(lg) {
-          color: #FFFFFF;
-        }
       }
 
       .headline {
@@ -483,6 +493,7 @@
         letter-spacing: 0%;
         text-transform: uppercase;
         color: #262727;
+        width: 100%;
       }
     }
 
@@ -494,6 +505,8 @@
       width: 100%;
       font-family: 'Inter', serif;
       margin-top: 16px;
+      font-size: 12px;
+      color: #B60017;
 
       @include max-w(lg) {
         margin-top: 17px;
@@ -513,6 +526,7 @@
 
       .meta-reading {
         font-size: 12px;
+        font-weight: 600;
         text-align: right;
         color: #B60017;
         margin-left: auto;
@@ -523,15 +537,212 @@
   }
 }
 
+.cg-card-banner {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background: #FFF;
+  //box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+
+  @include max-w(lg) {
+    flex-direction: column;
+  }
+
+  .cg-card-image {
+    overflow: hidden;
+    flex: 0 0 auto;
+    position: relative;
+    aspect-ratio: 2/1;
+    max-width: 60%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s cubic-bezier(0,0,0,1);
+    }
+
+    @include max-w(lg) {
+      width: 100%;
+      max-width: none;
+      height: auto;
+      z-index: 0;
+    }
+
+
+    .cg-card-badge {
+      margin-bottom: auto;
+      color: #FFFFFF;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 6px 4px;
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      .tag {
+        font-weight: 600;
+        padding: 4px 8px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 4px;
+        color: #FFFFFF;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &:hover {
+    .cg-card-image {
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .cg-card-text {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include max-w(lg) {
+      padding: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cg-card-tags {
+      display: flex;
+      gap: 10px;
+      font-family: 'Inter', serif;
+      justify-content: flex-start;
+      width: 100%;
+      text-transform: capitalize;
+      margin-bottom: auto;
+
+      .tag {
+        font-size: 12px;
+        padding: 0;
+        color: #B60017;
+        background: none;
+        border: none;
+        justify-content: space-between;
+        text-decoration: none;
+
+      }
+    }
+
+
+    .cg-card-content {
+      gap: 16px;
+      width: 100%;
+      margin-bottom: auto;
+
+      @include max-w(lg) {
+        margin-bottom: 0;
+      }
+
+      p {
+        font-family: "Shippori Mincho", serif;
+        margin-bottom: 0;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        color: #262727;
+        font-size: 20px;
+
+        @include max-w(lg) {
+          font-size: 14px;
+        }
+      }
+
+      .headline {
+        gap: 10px;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #262727;
+        width: 100%;
+
+        @include max-w(lg) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .cg-card-meta {
+      gap: 10px;
+      align-items: baseline;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      font-family: 'Inter', serif;
+      margin-top: 16px;
+      font-size: 12px;
+      color: #B60017;
+
+
+      @include max-w(lg) {
+        margin-top: 17px;
+        margin-bottom: 3px;
+      }
+      .meta-like,
+      .meta-bookmark {
+        color: #B60017;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4px;
+        font-size: 12px;
+
+      }
+
+      .meta-reading {
+        font-size: 12px;
+        font-weight: 600;
+        text-align: right;
+        color: #B60017;
+        margin-left: auto;
+        margin-bottom: 0;
+
+      }
+    }
+  }
+}
+
+.container .cg-card-banner {
+  @include max-w(lg) {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
 
 .cg-card-location {
   align-items: center;
   border: 1px solid #F3F3F3;
   display: flex;
+  width: 100%;
 
   .cg-card-image {
-    width: 160.5px;
-    height: 158px;
+    width: 150px;
+    aspect-ratio: 1/1;
+    flex: 0 0 auto;
+    
+    img {
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
   }
 
   .cg-card-text {
@@ -552,13 +763,23 @@
   .cg-card-meta {
     font-size: 13px;
     color: #53565A;
+    font-size: 12px;
+    color: #B60017;
 
     .rating {
       display: flex;
-      gap: 4px;
+      gap: .25em;
+      white-space: nowrap;
+      font-size: 16px;
+      overflow: hidden;
+      flex-wrap: nowrap;
+      > * {
+        flex: 0 0 auto;
+        display: block;
+      }
       svg {
-        width: 16px;
-        height: 16px;
+        width: 1em;
+        height: 1em;
         color: #B50017;
       }
     }

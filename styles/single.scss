@@ -55,6 +55,20 @@
   }
 }
 
+.cg-single-video {
+  background: #CCCCCC;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 700px;
+  margin: auto;
+  iframe, embed, video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+}
+
 .cg-single-content {
   display: flex;
   gap: 16px;
